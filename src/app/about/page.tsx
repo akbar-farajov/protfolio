@@ -64,7 +64,7 @@ const About = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 pt-24">
         <div className="max-w-4xl mx-auto">
           <Header
             title="About Me"

@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 const Projects = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen pb-20 px-4 sm:px-6 lg:px-8 pt-24">
         <div className="max-w-7xl mx-auto">
           <Header
             title="Projects"

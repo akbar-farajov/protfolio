@@ -10,7 +10,7 @@ import { SocialLinks } from "@/components/contact/social-links";
 const Contact = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 pt-24">
         <div className="max-w-5xl mx-auto">
           <Header
             title="Get In Touch"

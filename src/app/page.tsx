@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative pt-16">
         <motion.div
           variants={containerVariants}
           initial="hidden"
