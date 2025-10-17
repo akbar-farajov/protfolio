@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PageTransition } from "@/components/page-transition";
 import { Code2, Palette, Zap, Users } from "lucide-react";
+import { Header } from "@/components/header";
 
 const About = () => {
   const skills = [
@@ -65,20 +66,10 @@ const About = () => {
     <PageTransition>
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text mb-4">
-              About Me
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Passionate about creating exceptional web experiences
-            </p>
-          </motion.div>
+          <Header
+            title="About Me"
+            description="Learn more about me and my journey"
+          />
 
           {/* Bio Section */}
           <motion.div

@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { PageTransition } from "@/components/page-transition";
 import { Mail, MapPin, Phone, Send, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
+import { Header } from "@/components/header";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       setFormData({ name: "", email: "", message: "" });
       setIsSubmitting(false);
@@ -66,21 +66,10 @@ const Contact = () => {
     <PageTransition>
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text mb-4">
-              Get In Touch
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or just want to chat? Feel free to reach
-              out!
-            </p>
-          </motion.div>
+          <Header
+            title="Get In Touch"
+            description="Have a project in mind or just want to chat? Feel free to reach out!"
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}

@@ -1,7 +1,12 @@
-"use client";
 import { motion } from "framer-motion";
+import { FC } from "react";
 
-export const ProjectsHeader = () => {
+type HeaderProps = {
+  title: string;
+  description: string;
+};
+
+export const Header: FC<HeaderProps> = ({ title, description }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -10,11 +15,10 @@ export const ProjectsHeader = () => {
       className="text-center mb-16"
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text mb-4">
-        Projects
+        {title}
       </h1>
       <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        A collection of my recent work showcasing modern web development with
-        cutting-edge technologies
+        {description}
       </p>
     </motion.div>
   );
