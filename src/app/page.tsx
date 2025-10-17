@@ -38,7 +38,6 @@ const Home = () => {
           animate="visible"
           className="max-w-4xl mx-auto text-center space-y-8"
         >
-          {/* Greeting */}
           <motion.div variants={itemVariants} className="space-y-2">
             <motion.div
               initial={{ scale: 0 }}
@@ -53,7 +52,6 @@ const Home = () => {
             </h2>
           </motion.div>
 
-          {/* Name */}
           <motion.h1
             variants={itemVariants}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold gradient-text hero-glow"
@@ -61,7 +59,6 @@ const Home = () => {
             Akbar Farajov
           </motion.h1>
 
-          {/* Title */}
           <motion.p
             variants={itemVariants}
             className="text-2xl sm:text-3xl md:text-4xl text-muted-foreground font-light"
@@ -69,7 +66,6 @@ const Home = () => {
             Frontend Developer
           </motion.p>
 
-          {/* Description */}
           <motion.p
             variants={itemVariants}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
@@ -80,7 +76,6 @@ const Home = () => {
             modern web technologies
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
@@ -100,7 +95,6 @@ const Home = () => {
             </Link>
           </motion.div>
 
-          {/* Social Links */}
           <motion.div
             variants={itemVariants}
             className="flex gap-4 justify-center items-center pt-8"
@@ -135,7 +129,6 @@ const Home = () => {
             </motion.a>
           </motion.div>
 
-          {/* Scroll Indicator */}
           <motion.div variants={itemVariants} className="pt-16">
             <motion.div
               animate={{ y: [0, 10, 0] }}
