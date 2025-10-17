@@ -33,6 +33,7 @@ import {
   ToolOutput,
 } from "@/components/ai-elements/tool";
 import { ProjectsTool } from "./tools/projects-tool";
+import { cn } from "@/lib/utils";
 
 const Chat = () => {
   const suggestions = [
@@ -54,7 +55,7 @@ const Chat = () => {
     <PageTransition>
       <div className="flex flex-col h-screen overflow-hidden relative pt-24">
         <Conversation className="relative size-full mb-44 scroll-smooth">
-          <ConversationContent className="max-w-6xl mx-auto">
+          <ConversationContent className="max-w-5xl mx-auto">
             {messages.length === 0 ? (
               <ConversationEmptyState
                 icon={<MessageSquareIcon className="size-6" />}
@@ -69,7 +70,12 @@ const Chat = () => {
                       switch (part.type) {
                         case "text":
                           return (
-                            <Response key={`${message.id}-${index}`}>
+                            <Response
+                              className={cn(
+                                message.role === "assistant" ? "pl-1" : "pr-1"
+                              )}
+                              key={`${message.id}-${index}`}
+                            >
                               {part.type === "text" ? part.text : ""}
                             </Response>
                           );
@@ -100,7 +106,7 @@ const Chat = () => {
             sendMessage({ text: message.text || "" });
             setInput("");
           }}
-          className="mt-4 absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-6xl p-2 mb-8 shadow-xs bg-background rounded-lg"
+          className="mt-4 absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl p-2 mb-8 shadow-xs bg-background rounded-lg"
         >
           <PromptInputBody>
             <PromptInputTextarea
