@@ -2,6 +2,7 @@
 import { PageTransition } from "@/components/page-transition";
 import { ProjectsGrid } from "@/components/projects/projects-grid";
 import { Header } from "@/components/header";
+import { projects } from "./projects";
 
 const Projects = () => {
   return (
@@ -12,7 +13,7 @@ const Projects = () => {
             title="Projects"
             description="A collection of my recent work showcasing modern web development with cutting-edge technologies"
           />
-          <ProjectsGrid />
+          <ProjectsGrid projects={projects} />
         </div>
       </div>
     </PageTransition>
