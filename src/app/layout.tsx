@@ -63,9 +63,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen">
+          <div className="max-h-screen h-screen flex flex-col">
             <Navbar />
-            <main className="pt-16">{children}</main>
+            <main className="flex-1">{children}</main>
             <BackgroundAnimation />
           </div>
         </ThemeProvider>

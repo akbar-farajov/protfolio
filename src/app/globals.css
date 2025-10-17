@@ -150,4 +150,54 @@
   .hero-glow {
     text-shadow: 0 0 40px hsl(var(--hero-glow) / 0.5);
   }
+
+  /* Custom Scrollbar - Webkit browsers (Chrome, Safari, Edge) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.634 0.233 254.4 / 0.3) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: oklch(0.634 0.233 254.4 / 0.3);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.634 0.233 254.4 / 0.5);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background: oklch(0.634 0.233 254.4 / 0.7);
+  }
+
+  /* Dark mode scrollbar */
+  .dark * {
+    scrollbar-color: oklch(0.63 0.233 254.4 / 0.4) transparent;
+  }
+
+  .dark *::-webkit-scrollbar-thumb {
+    background: oklch(0.63 0.233 254.4 / 0.4);
+  }
+
+  .dark *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.63 0.233 254.4 / 0.6);
+  }
+
+  .dark *::-webkit-scrollbar-thumb:active {
+    background: oklch(0.63 0.233 254.4 / 0.8);
+  }
 }
