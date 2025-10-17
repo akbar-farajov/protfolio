@@ -4,6 +4,7 @@ import "./globals.css";
 import { BackgroundAnimation } from "@/components/background-animation";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Toaster richColors />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
