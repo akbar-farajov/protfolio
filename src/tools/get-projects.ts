@@ -18,8 +18,17 @@ export const getProjectsTool = tool({
     })
   ),
   execute: async () => {
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
     const data = await getProjects();
-    return data;
+    if (!data) return [];
+
+    return data.map((project) => ({
+      id: project.id,
+      title: project.title,
+      description: project.description,
+      tags: project.tags,
+      image: project.image,
+      liveUrl: project.live_url,
+      githubUrl: project.github_url ?? undefined,
+    }));
   },
 });
