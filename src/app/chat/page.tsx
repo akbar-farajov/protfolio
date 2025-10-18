@@ -27,7 +27,10 @@ const Chat = () => {
       <div className="flex flex-col h-screen overflow-hidden relative pt-24">
         <Messages messages={messages} />
         <ChatComposer
-          onSubmit={() => sendMessage({ text: input })}
+          onSubmit={() => {
+            sendMessage({ text: input });
+            setInput("");
+          }}
           setInput={setInput}
           input={input}
           suggestions={suggestions}
