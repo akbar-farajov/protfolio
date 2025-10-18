@@ -28,7 +28,7 @@ export const ChatComposer = ({
   return (
     <PromptInput
       onSubmit={onSubmit}
-      className="mt-4 absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl p-2 mb-8 shadow-xs bg-background rounded-lg"
+      className="mt-4 absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl p-2 mb-4 md:mb-8 shadow-xs bg-background rounded-lg"
     >
       <PromptInputBody>
         <PromptInputTextarea

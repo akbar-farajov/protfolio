@@ -24,7 +24,10 @@ const Chat = () => {
 
   return (
     <PageTransition>
-      <div className="flex flex-col h-screen overflow-hidden relative pt-24">
+      <div
+        className="flex flex-col overflow-hidden relative pt-24"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      >
         <Messages messages={messages} />
         <ChatComposer
           onSubmit={() => {

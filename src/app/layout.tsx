@@ -5,6 +5,7 @@ import { BackgroundAnimation } from "@/components/background-animation";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +54,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="viewport-height-fix" strategy="beforeInteractive">
+          {`
+            (function() {
+              function setVH() {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', vh + 'px');
+              }
+              setVH();
+              window.addEventListener('resize', setVH);
+              window.addEventListener('orientationchange', setVH);
+            })();
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

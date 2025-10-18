@@ -143,6 +143,17 @@
     @apply bg-background text-foreground;
   }
 
+  /* Mobile viewport fix for address bar */
+  :root {
+    --vh: 1vh;
+  }
+
+  @supports (height: 100dvh) {
+    :root {
+      --vh: 1dvh;
+    }
+  }
+
   .gradient-text {
     @apply bg-gradient-to-r from-[hsl(var(--gradient-from))] to-[hsl(var(--gradient-to))] bg-clip-text text-transparent;
   }
