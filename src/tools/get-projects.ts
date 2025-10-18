@@ -18,8 +18,8 @@ export const getProjectsTool = tool({
       description: z.string(),
       tags: z.array(z.string()),
       image: z.string(),
-      liveUrl: z.string(),
-      githubUrl: z.string().optional(),
+      live_url: z.string(),
+      github_url: z.string().optional(),
     })
   ),
   execute: async () => {
@@ -32,8 +32,8 @@ export const getProjectsTool = tool({
       description: project.description,
       tags: project.tags,
       image: project.image,
-      liveUrl: project.live_url,
-      githubUrl: project.github_url ?? undefined,
+      live_url: project.live_url,
+      github_url: project.github_url ?? undefined,
     }));
   },
 });
