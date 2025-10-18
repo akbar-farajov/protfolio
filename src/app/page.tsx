@@ -1,6 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  MessageSquareIcon,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/page-transition";
@@ -86,6 +92,12 @@ const Home = () => {
                   View Projects
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
+              </Button>
+            </Link>
+            <Link href="/chat">
+              <Button size="lg" variant="outline">
+                Chat with AI
+                <MessageSquareIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link href="/contact">

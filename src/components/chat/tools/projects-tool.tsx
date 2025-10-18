@@ -20,7 +20,12 @@ export const ProjectsTool: React.FC<ProjectsToolProps> = ({ part }) => {
       <Tool>
         <ToolHeader type={part.type} state={part.state} />
         <ToolContent>
-          <ToolOutput output={part.output} errorText={part.errorText} />
+          {part.state === "output-available" && (
+            <ToolOutput
+              output={part.output.map((project: Project) => project.title)}
+              errorText={part.errorText}
+            />
+          )}
         </ToolContent>
       </Tool>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
