@@ -30,7 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
             <Button
               size="icon"
               variant="secondary"
