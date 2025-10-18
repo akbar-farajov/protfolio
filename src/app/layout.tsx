@@ -79,7 +79,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="max-h-[100dvh] h-[100dvh] flex flex-col">
+          <div className="max-h-scren h-screen flex flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
             <BackgroundAnimation />
