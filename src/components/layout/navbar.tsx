@@ -17,10 +17,10 @@ export const Navbar = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
+    { name: "Chat", path: "/chat" },
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
-    { name: "Chat", path: "/chat" },
   ];
 
   return (
@@ -35,7 +35,7 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="text-xl font-bold gradient-text"
           >
-            AF
+            <Link href="/">AF</Link>
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
