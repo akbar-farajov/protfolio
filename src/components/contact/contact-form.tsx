@@ -42,11 +42,11 @@ export const ContactForm = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <Card className="border-2">
-        <CardContent className="p-8">
+      <Card className="border-2 h-full flex flex-col">
+        <CardContent className="p-8 flex-1 flex flex-col">
           <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
 
-          <form action={handleSubmit} className="space-y-6">
+          <form action={handleSubmit} className="flex-1 flex flex-col gap-6">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" name="name" placeholder="Your name" required />
@@ -61,13 +61,13 @@ export const ContactForm = () => {
                 required
               />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 flex-1 flex flex-col">
               <Label htmlFor="message">Message</Label>
               <Textarea
+                className="flex-1 resize-none"
                 id="message"
                 name="message"
                 placeholder="Tell me about your project..."
-                rows={6}
                 required
               />
             </div>
