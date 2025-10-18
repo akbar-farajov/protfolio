@@ -4,9 +4,9 @@ A modern, interactive portfolio website built with Next.js featuring an AI-power
 
 ## ✨ Features
 
-- **AI Chat Interface** - Interactive chat with AI-powered project assistance
+- **AI Chat Interface** - Interactive chat with AI-powered project assistance using Vercel AI SDK
 - **Project Showcase** - Dynamic projects gallery with Supabase integration
-- **Contact Form** - Email integration for visitor inquiries
+- **Contact Form** - Store visitor inquiries directly to Supabase
 - **Responsive Design** - Modern UI with shadcn/ui components
 - **Dark Mode Support** - Theme provider with system preference detection
 - **Page Transitions** - Smooth animations between pages
@@ -14,8 +14,9 @@ A modern, interactive portfolio website built with Next.js featuring an AI-power
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js 14+](https://nextjs.org) with App Router
+- **Framework:** [Next.js 15+](https://nextjs.org) with App Router
 - **Language:** [TypeScript](https://www.typescriptlang.org)
+- **AI:** [Vercel AI SDK](https://sdk.vercel.ai) with Google & OpenAI providers
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **UI Components:** [shadcn/ui](https://ui.shadcn.com)
 - **Database:** [Supabase](https://supabase.com)
@@ -82,11 +83,10 @@ portfolio/
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-   # Email (for contact form)
-   EMAIL_SERVICE_KEY=your_email_service_key
-
-   # AI Chat (if applicable)
-   AI_API_KEY=your_ai_api_key
+   # AI Chat (Vercel AI SDK)
+   OPENAI_API_KEY=your_openai_api_key
+   # or
+   GOOGLE_GENERATIVE_AI_API_KEY=your_google_api_key
    ```
 
 4. **Set up Supabase**
@@ -169,7 +169,12 @@ UI components from shadcn/ui can be customized in `src/components/ui/`.
 
 - `next` - React framework
 - `react` & `react-dom` - UI library
+- `ai` - Vercel AI SDK core
+- `@ai-sdk/google` - Google AI provider for Vercel AI SDK
+- `@ai-sdk/openai` - OpenAI provider for Vercel AI SDK
+- `@ai-sdk/react` - React hooks for AI SDK
 - `@supabase/supabase-js` - Supabase client
+- `@xyflow/react` - Flow diagram library for AI visualizations
 - `tailwindcss` - Utility-first CSS
 - `framer-motion` - Animation library
 - `lucide-react` - Icon library
@@ -210,6 +215,7 @@ Contributions, issues, and feature requests are welcome!
 ## 🙏 Acknowledgments
 
 - [Next.js](https://nextjs.org)
+- [Vercel AI SDK](https://sdk.vercel.ai)
 - [shadcn/ui](https://ui.shadcn.com)
 - [Supabase](https://supabase.com)
 - [Vercel](https://vercel.com)
