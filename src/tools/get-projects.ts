@@ -4,8 +4,13 @@ import { z } from "zod";
 import { getProjects } from "@/actions/projects";
 
 export const getProjectsTool = tool({
-  description: "Get all projects",
-  inputSchema: z.object({}).describe("Get all projects that I have worked on"),
+  description:
+    "Get Akbar's portfolio projects - software projects, web applications, and coding work. Use this tool ONLY when specifically asked about portfolio projects, GitHub projects, or code/software work. DO NOT use for education, experience, skills, or personal information.",
+  inputSchema: z
+    .object({})
+    .describe(
+      "Get all portfolio projects and software work that Akbar has built"
+    ),
   outputSchema: z.array(
     z.object({
       id: z.number(),
