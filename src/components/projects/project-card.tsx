@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { Project } from "@/types/project";
 import { Badge } from "../ui/badge";
+import { getPublicImageUrl } from "@/lib/supabase-image";
 
 type ProjectCardProps = {
   project: Project;
@@ -23,7 +24,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <Card className="group overflow-hidden border-2 hover:border-primary transition-all duration-300 h-full">
         <div className="relative h-48 overflow-hidden">
           <motion.img
-            src={project.image}
+            src={getPublicImageUrl(project.image)}
             alt={project.title}
             className="w-full h-full object-cover"
             whileHover={{ scale: 1.1 }}
@@ -37,14 +38,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               asChild
             >
               <a
-                href={project.liveUrl}
+                href={project.live_url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <ExternalLink className="w-5 h-5" />
               </a>
             </Button>
-            {project.githubUrl && (
+            {project.github_url && (
               <Button
                 size="icon"
                 variant="secondary"
@@ -52,7 +53,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 asChild
               >
                 <a
-                  href={project.githubUrl}
+                  href={project.github_url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
