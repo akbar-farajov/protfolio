@@ -1,10 +1,11 @@
 import { tool } from "ai";
 import { z } from "zod";
-import { projects } from "@/app/projects/projects";
+
+import { getProjects } from "@/actions/projects";
 
 export const getProjectsTool = tool({
   description: "Get all projects",
-  inputSchema: z.object({}).describe("Get all projects"),
+  inputSchema: z.object({}).describe("Get all projects that I have worked on"),
   outputSchema: z.array(
     z.object({
       id: z.number(),
@@ -17,6 +18,8 @@ export const getProjectsTool = tool({
     })
   ),
   execute: async () => {
-    return projects;
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    const data = await getProjects();
+    return data;
   },
 });

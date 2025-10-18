@@ -42,6 +42,8 @@
     "@radix-ui/react-use-controllable-state": "^1.2.2",
     "@react-email/components": "^0.5.7",
     "@react-email/render": "^1.4.0",
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.75.1",
     "@xyflow/react": "^12.8.6",
     "ai": "^5.0.76",
     "class-variance-authority": "^0.7.1",

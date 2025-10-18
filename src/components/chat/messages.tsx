@@ -20,7 +20,7 @@ export const Messages = ({ messages }: { messages: UIMessage[] }) => {
           <ConversationEmptyState
             icon={<MessageSquareIcon className="size-6" />}
             title="Start a chat with Akbar"
-            description="Messages will appear here as the chat progresses."
+            description="Ask me everything about myself — technologies, experience, projects, and more!"
           />
         ) : (
           messages.map((message, index) => (
