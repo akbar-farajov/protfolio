@@ -50,7 +50,7 @@ export const ChatComposer = ({
           ))}
         </Suggestions>
         <PromptInputSubmit
-          disabled={!input.trim() && !status}
+          disabled={!input.trim() && status !== "streaming"}
           status={status}
           onStop={onStop}
         />
