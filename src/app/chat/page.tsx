@@ -8,7 +8,7 @@ import { ChatComposer } from "@/components/chat/chat-composer";
 
 const Chat = () => {
   const suggestions = [
-    "👋 What’s your name?",
+    "👋 What's your name?",
     "💻 Which technologies do you work with?",
     "🚀 Talk about your work experience",
     "🎓 Show your education",
@@ -16,7 +16,7 @@ const Chat = () => {
     "🎯 What are your projects?",
   ];
   const [input, setInput] = useState("");
-  const { messages, sendMessage, status } = useChat();
+  const { messages, sendMessage, status, stop } = useChat();
 
   const handleSuggestionClick = (suggestion: string) => {
     sendMessage({ text: suggestion });
@@ -31,9 +31,15 @@ const Chat = () => {
         <Messages messages={messages} />
         <ChatComposer
           onSubmit={() => {
+            const hasText = Boolean(input.trim());
+            if (!hasText) {
+              return;
+            }
+
             sendMessage({ text: input });
             setInput("");
           }}
+          onStop={stop}
           setInput={setInput}
           input={input}
           suggestions={suggestions}

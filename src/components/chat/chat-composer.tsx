@@ -11,6 +11,7 @@ import { ChatStatus } from "ai";
 
 type ChatComposerProps = {
   onSubmit: () => void;
+  onStop: () => void;
   setInput: (input: string) => void;
   input: string;
   suggestions: string[];
@@ -24,6 +25,7 @@ export const ChatComposer = ({
   handleSuggestionClick,
   status,
   onSubmit,
+  onStop,
 }: ChatComposerProps) => {
   return (
     <PromptInput
@@ -47,7 +49,11 @@ export const ChatComposer = ({
             />
           ))}
         </Suggestions>
-        <PromptInputSubmit disabled={!input.trim()} status={status} />
+        <PromptInputSubmit
+          disabled={!input.trim() && !status}
+          status={status}
+          onStop={onStop}
+        />
       </PromptInputFooter>
     </PromptInput>
   );
