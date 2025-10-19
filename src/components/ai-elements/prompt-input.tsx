@@ -1000,13 +1000,15 @@ export const PromptInputSubmit = ({
 }: PromptInputSubmitProps) => {
   let Icon = <SendIcon className="size-4" />;
 
-  if (status === "submitted" || status === "streaming") {
+  if (status === "streaming") {
     Icon = <SquareIcon className="size-4" />;
+  } else if (status === "submitted") {
+    Icon = <Loader2Icon className="size-4 animate-spin" />;
   } else if (status === "error") {
     Icon = <XIcon className="size-4" />;
   }
 
-  const isStreaming = status === "streaming" || status === "submitted";
+  const isStreaming = status === "streaming";
   const buttonType = isStreaming ? "button" : "submit";
   const handleClick = isStreaming ? onStop : undefined;
 
