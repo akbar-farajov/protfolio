@@ -28,6 +28,7 @@ export async function generateMetadata() {
 }
 
 export default function About() {
+  const locationLabel = person.locationLabel ?? person.location;
   const structure = [
     {
       title: about.intro.title,
@@ -96,7 +97,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              {locationLabel}
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">

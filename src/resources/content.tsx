@@ -2,49 +2,43 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Akbar",
+  lastName: "Farajov",
+  name: "Akbar Farajov",
+  role: "Frontend Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "akbarfarajovdev@gmail.com",
+  location: "Asia/Baku",
+  locationLabel: "Baku, Azerbaijan",
+  languages: ["Turkish (fluent)", "English (pre-intermediate)"],
 };
+
+const locationLabel = person.locationLabel ?? person.location;
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Subscribe for updates</>,
+  description: <>Occasional notes on frontend engineering, performance, and UI architecture.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/akbar-farajov",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/akbar-farajov/",
     essential: true,
   },
-  {
+    {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/akbar_farajov/",
     essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
   },
   {
     name: "Email",
@@ -76,16 +70,17 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Akbar, a frontend developer focused on Next.js and TypeScript. I build fast, accessible
+      web experiences with clean UI architecture.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `About - ${person.name}`,
+  description: `Meet ${person.name}, ${person.role} from ${locationLabel}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,137 +89,140 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Profile",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Mid-level frontend developer with 2+ years of experience delivering production-ready
+        Next.js and TypeScript applications. Focused on performance, SEO, and accessible UI
+        architecture, with an emphasis on clean, scalable frontend systems. Uses AI-assisted
+        tools to speed delivery and improve code quality.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true, 
+    title: "Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Fintlabs",
+        timeframe: "Baku | Sep 2023 - Present",
+        role: "Frontend Developer",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          "Build and maintain production Next.js and TypeScript web applications.",
+          "Apply SSR, ISR, and SSG to improve performance, SEO, and scalability.",
+          "Develop responsive, accessible UI components with Tailwind CSS.",
+          "Integrate Supabase for authentication, data, and backend services.",
+          "Use AI-assisted tools (Cursor, Windsurf, Codex) to speed prototyping and refactoring.",
+          "Collaborate in Agile and Scrum workflows (Jira) with cross-functional teams.",
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
       },
     ],
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "M.S. in Computer Science",
+        description: <>Baku Engineering University | Sep 2025 - Present</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "B.S. in Mathematics and Computer Science",
+        description: <>Baku Engineering University | Sep 2019 - Jun 2024</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frontend Engineering",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Next.js, React, TypeScript, JavaScript, HTML, and CSS with a focus on SSR, ISR, and SSG.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
           {
             name: "Next.js",
             icon: "nextjs",
           },
           {
+            name: "React",
+          },
+          {
+            name: "TypeScript",
+          },
+          {
+            name: "JavaScript",
+            icon: "javascript",
+          },
+          {
+            name: "HTML",
+          },
+          {
+            name: "CSS",
+          },
+        ],
+      },
+      {
+        title: "UI, State, and Tooling",
+        description: (
+          <>
+            Tailwind CSS, accessible components, Zustand for state management, and Git workflows.
+          </>
+        ),
+        tags: [
+          {
+            name: "Tailwind CSS",
+          },
+          {
+            name: "Zustand",
+          },
+          {
+            name: "Git",
+          },
+          {
+            name: "Accessibility",
+          },
+        ],
+      },
+      {
+        title: "Platforms and Delivery",
+        description: (
+          <>
+            Supabase for auth and data, Vercel deployments, Vercel AI SDK, and Jira for Agile
+            delivery.
+          </>
+        ),
+        tags: [
+          {
             name: "Supabase",
             icon: "supabase",
           },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Vercel",
+          },
+          {
+            name: "Vercel AI SDK",
+          },
+          {
+            name: "Jira",
+          },
+        ],
+      },
+      {
+        title: "Mobile",
+        description: <>React Native (Expo) for cross-platform prototypes and apps.</>,
+        tags: [
+          {
+            name: "React Native (Expo)",
           },
         ],
       },

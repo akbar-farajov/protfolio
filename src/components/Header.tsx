@@ -44,6 +44,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const locationLabel = person.locationLabel ?? person.location;
 
   return (
     <>
@@ -73,7 +74,7 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
+          {display.location && <Row s={{ hide: true }}>{locationLabel}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
           <Row
